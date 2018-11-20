@@ -1,0 +1,10 @@
+#
+# fips-reproc
+#
+---
+exports:
+    header-dirs:
+        - reproc/include
+    modules:
+        reproc: reproc/src/reproc
+        reproc++: reproc/src/reproc++

@@ -1,0 +1,20 @@
+.DS_Store
+.vscode/
+bin/
+vagrant/.vagrant
+doc/html
+build/*-*-*
+build/*/*-*-*
+build/*.json
+build/webpage
+sdks/
+configs/.selected
+*.txt.user
+*.swp
+CMakeLists.txt.user*
+.idea/
+#>fips
+# this area is managed by fips, do not edit
+.fips-*
+*.pyc
+#<fips
