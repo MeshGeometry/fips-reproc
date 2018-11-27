@@ -1,16 +1,15 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 2.8)
 
-# include the fips macros
 get_filename_component(FIPS_ROOT_DIR "../fips" ABSOLUTE)
 include("${FIPS_ROOT_DIR}/cmake/fips.cmake")
 
-set(FIPS_RTTI ON)
-set(FIPS_EXCEPTIONS ON)
+fips_setup(PROJECT reproc)
 
-set (CMAKE_CXX_STANDARD 17)
+fips_begin_lib(reproc)
+	fips_include_directories(reproc/include)
+    fips_vs_warning_level(3)
+    fips_src(reproc/src/reproc RECURSE GROUP)
+    fips_src(reproc/src/reproc++ RECURSE GROUP)
+fips_end_lib()
 
-fips_setup()
-set(REPROCXX ON)
-fips_project(reproc)
-fips_add_subdirectory(reproc)
 fips_finish()
