@@ -9,8 +9,8 @@ set(FIPS_EXCEPTIONS ON)
 
 set (CMAKE_CXX_STANDARD 17)
 
-set(REPROCXX ON)
 fips_setup()
+set(REPROCXX ON)
 fips_project(reproc)
 fips_add_subdirectory(reproc)
 fips_finish()
