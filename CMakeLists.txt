@@ -8,8 +8,17 @@ fips_setup(PROJECT reproc)
 fips_begin_lib(reproc)
 	fips_include_directories(reproc/include)
     fips_vs_warning_level(3)
-    fips_src(reproc/src/reproc RECURSE GROUP)
-    fips_src(reproc/src/reproc++ RECURSE GROUP)
+    fips_files(
+    	reproc/src/reproc/common/error.c
+    	reproc/src/reproc/common/infinite.c
+    	reproc/src/reproc/common/reproc.c
+    	)
+    if(FIPS_MACOS OR FIPS_LINUX)
+	    # fips_src(reproc/src/reproc/posix GLOB)
+	endif()
+	if(FIPS_WINDOWS)
+	    # fips_src(reproc/src/reproc/windows GLOB)
+	endif()
 fips_end_lib()
 
 fips_finish()
